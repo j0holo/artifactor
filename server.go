@@ -8,11 +8,11 @@ import (
 	"os"
 )
 
-const MAX_MEMORY = 10 << 20
+const MaxMemory = 10 << 20 // 20MB
 
 func upload(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
-		err := r.ParseMultipartForm(MAX_MEMORY)
+		err := r.ParseMultipartForm(MaxMemory)
 		if err != nil {
 			log.Println("Couldn't parse multipartform.")
 			log.Println(err)
